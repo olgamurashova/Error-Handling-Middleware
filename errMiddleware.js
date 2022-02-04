@@ -19,6 +19,9 @@ app.use((err, req, res, next) => {
 
 
 //Alternative code
+/*Error handling middleware needs to be the last app.use() in our file. 
+If an error happens in any of our routes, we want to make sure it gets passed to our error handler. 
+The middleware stack progresses through routes as they are presented in a file, therefore the error handler should sit at the bottom of the file. */
 
 app.use((err, req, res, next) => {
   console.error(err.stack);
