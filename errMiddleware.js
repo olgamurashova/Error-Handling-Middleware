@@ -14,7 +14,7 @@ app.use((req, res, next) => {
 
 app.use((err, req, res, next) => {
   const status = err.status || 500;
-  req.status(status).send(err.message);
+  res.status(status).send(err.message);
 });
 
 
